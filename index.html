@@ -55,7 +55,7 @@
         </div>
         <div class="notes">
           <p class="nav-heading">Notes</p>
-          <i class="fas fa-sticky-note fa-lg" ></i>
+          <i class="fas fa-sticky-note fa-lg"></i>
         </div>
         <div class="footer">
           <p class="credit">Copyright © 2022 jonathanfoo</p>
@@ -68,12 +68,21 @@
       <div class="content">
         <div class="slide">
           <p class="slide-heading">Home</p>
-          <div class="todo-item">
-            <input type="checkbox" name="" id="" />
-            <p class="todo-title"></p>
-            <p class="due-date"></p>
-            <button type="edit-btn"></button>
-            <button type="delete-btn"></button>
+          <div class="to-do-item">
+            <span class="priority high"></span>
+            <div class="left-section">
+              <input
+                type="checkbox"
+                name="to-do-checkbox"
+                id="to-do-checkbox"
+              />
+              <p class="to-do-title">Take out the trash</p>
+            </div>
+            <div class="right-section">
+              <p class="due-date">21/03/22</p>
+              <i class="far fa-edit" aria-hidden="true"></i>
+              <i class="fas fa-backspace" aria-hidden="true"></i>
+            </div>
           </div>
           <!-- <div class="new-task-modal">
             <form action="#">
@@ -100,8 +109,8 @@
               </button>
             </form>
           </div>
-          <button type="button" class="new-task-btn">New Task</button>
-        </div> -->
+          <button type="button" class="new-task-btn">New Task</button> -->
+        </div>
         <!-- <div class="slide today-slide">
           <p class="slide-heading">Today</p>
         </div>
@@ -110,6 +119,5 @@
         </div> -->
       </div>
     </div>
-    
   </body>
 </html>

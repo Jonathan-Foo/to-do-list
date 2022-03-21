@@ -28,6 +28,7 @@ body {
   padding: 1em 4em;
   background-color: var(--main-color);
   color: white;
+  border-bottom: 10px solid var(--card-color);
 }
 
 .title {
@@ -46,9 +47,10 @@ body {
 
 .navbar {
   position: relative;
-  background: var(--card-color);
+  background: var(--main-color);
   color: white;
   padding: 1.5em 2em;
+
   font-size: 1.2em;
   display: flex;
   flex-direction: column;
@@ -108,9 +110,112 @@ body {
 }
 
 /* CONTENT STYLES */
+.content {
+  width: 100%;
+}
 
 .slide {
+  padding: 1.5em;
+  /* border: 1px solid red; */
+  min-height: 100vh;
+}
+
+.to-do-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1em;
+  color: #222;
+  align-items: center;
+  background-color: var(--card-color);
+  transition: 100ms ease-in-out;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.to-do-item:hover {
+  transform: scale(1.01);
+}
+
+.fa-edit {
+  color: var(--main-color);
+}
+
+.fa-edit:hover {
+  color: var(--light-main-color);
+}
+
+.fa-backspace {
+  color: rgb(255, 17, 17);
+}
+
+.fa-backspace:hover {
+  color: rgb(192, 0, 0);
+}
+
+.priority {
+  position: absolute;
+  background: #ccc;
+  width: 30px;
+  height: 100%;
+  left: 0;
+  z-index: 0;
+}
+
+.priority.high {
+  background: rgb(255, 55, 55);
+}
+
+.priority.mid {
+  background: rgb(255, 111, 15);
+}
+
+.priority.low {
+  background: rgb(46, 235, 39);
+}
+
+/* CUSTOM CHECKBOX STYLE */
+#to-do-checkbox {
+  -webkit-appearance: none;
+  position: relative;
+  appearance: none;
+  cursor: pointer;
+  border-radius: 3px;
+  background: white;
+  width: 2em;
+  height: 2em;
+}
+
+#to-do-checkbox::before {
+  content: "✖";
+  color: #777;
+  position: absolute;
+  transform: scale(2);
+  margin: 6px 0 0 7.5px;
+  visibility: hidden;
+}
+
+#to-do-checkbox:checked::before {
+  visibility: visible;
+}
+
+.right-section,
+.left-section {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.slide-heading {
+  font-size: 2em;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.5em;
 }
 
 /* FOOTER STYLES */
