@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
@@ -21,44 +20,53 @@
   </head>
   <body>
     <div class="header">
-      <p class="title">To Do List</p>
+      <i class="fas fa-clipboard-list fa-3x"></i>
+      <p class="title">To-Do List</p>
+      <i class="fas fa-clipboard-list fa-3x"></i>
     </div>
     <div class="main">
       <div class="navbar">
         <div class="main-section">
           <p class="nav-heading">Main</p>
-          <div class="home">
-            <img src="" alt="" />
-            <p></p>
+          <div class="tab home">
+            <i class="fas fa-envelope-open-text"></i>
+            <p>Home</p>
           </div>
-          <div class="today">
-            <img src="" alt="" />
-            <p></p>
+          <div class="tab today">
+            <i class="fas fa-calendar-day"></i>
+            <p>Today</p>
           </div>
-          <div class="week">
-            <img src="" alt="" />
-            <p></p>
+          <div class="tab week">
+            <i class="fas fa-calendar-week"></i>
+            <p>Week</p>
           </div>
         </div>
         <div class="project">
           <p class="nav-heading">Projects</p>
           <div class="new-projects">
             <div class="project-item">
-              <img src="" alt="" />
+              <i class="fas fa-list-alt"></i>
               <p class="nav-subheading">Project Example</p>
             </div>
           </div>
           <button class="add-projects-btn">
-            <img src="" alt="" />
+            <i class="fas fa-plus-square"></i> New Project
           </button>
         </div>
         <div class="notes">
           <p class="nav-heading">Notes</p>
+          <i class="fas fa-sticky-note fa-lg" ></i>
+        </div>
+        <div class="footer">
+          <p class="credit">Copyright © 2022 jonathanfoo</p>
+          <a href="https://github.com/Jonathan-Foo" target="_blank">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
 
       <div class="content">
-        <div class="slide home-slide active">
+        <div class="slide">
           <p class="slide-heading">Home</p>
           <div class="todo-item">
             <input type="checkbox" name="" id="" />
@@ -67,7 +75,7 @@
             <button type="edit-btn"></button>
             <button type="delete-btn"></button>
           </div>
-          <div class="new-task-modal">
+          <!-- <div class="new-task-modal">
             <form action="#">
               <input
                 type="text"
@@ -93,18 +101,15 @@
             </form>
           </div>
           <button type="button" class="new-task-btn">New Task</button>
-        </div>
-        <div class="slide today-slide">
+        </div> -->
+        <!-- <div class="slide today-slide">
           <p class="slide-heading">Today</p>
         </div>
         <div class="slide week-slide">
           <p class="slide-heading">Week</p>
-        </div>
+        </div> -->
       </div>
     </div>
-    <div class="footer">
-      <p class="credit">Copyright © 2022 jonathan-foo</p>
-      <a href=""></a>
-    </div>
+    
   </body>
 </html>
