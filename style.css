@@ -1,0 +1,18 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-color: #22c55e;
+  --secondary-color: #e2e8f0;
+  --card-color: #facc15;
+  --subtext-color: #777;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
