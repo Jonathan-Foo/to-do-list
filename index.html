@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/clipboard-list-solid.svg" />
     <title>To Do List</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -74,7 +75,7 @@
       </div>
 
       <div class="content">
-        <div class="slide">
+        <!-- <div class="slide">
           <p class="slide-heading">Home</p>
           <div class="to-do-item">
             <span class="priority high"></span>
@@ -150,48 +151,108 @@
                 class="task-detail"
                 placeholder="Description"
               ></textarea>
-
-              <div class="priority-pick">
-                <input
-                  type="radio"
-                  name="priority-level"
-                  id="low"
-                  value="low"
-                  class="low-radio-btn"
-                  required
-                />
-                <input
-                  type="radio"
-                  name="priority-level"
-                  id="mid"
-                  value="mid"
-                  class="mid-radio-btn"
-                  required
-                />
-
-                <input
-                  type="radio"
-                  name="priority-level"
-                  id="high"
-                  value="high"
-                  class="high-radio-btn"
-                  required
-                />
+              <div class="options">
+                <div class="priority-pick">
+                  <input
+                    type="radio"
+                    name="priority-level"
+                    id="low"
+                    value="low"
+                    class="low-radio-btn"
+                    required
+                  />
+                  <input
+                    type="radio"
+                    name="priority-level"
+                    id="mid"
+                    value="mid"
+                    class="mid-radio-btn"
+                    required
+                  />
+                  <input
+                    type="radio"
+                    name="priority-level"
+                    id="high"
+                    value="high"
+                    class="high-radio-btn"
+                    required
+                  />
+                </div>
+                <button type="button" class="add">CONFIRM</button>
               </div>
-              <button type="button" class="add">CONFIRM</button>
             </form>
           </div>
-          <!-- <button type="button" class="new-task-btn">
+          <button type="button" class="new-task-btn">
             <i class="fas fa-plus"></i>
             New Task
-          </button> -->
-        </div>
-        <!-- <div class="slide today-slide">
-          <p class="slide-heading">Today</p>
-        </div>
-        <div class="slide week-slide">
-          <p class="slide-heading">Week</p>
+          </button>
         </div> -->
+        <div class="slide">
+          <div class="add-note-modal">
+            <form action="#" class="add-note-form">
+              <p class="note-form-title">NEW NOTE</p>
+              <i class="fas fa-times"></i>
+              <input type="text" class="new-note-title" placeholder="Heading" />
+              <textarea
+                name=""
+                id=""
+                class="new-note-detail"
+                placeholder="Details"
+              ></textarea>
+              <button class="new-note-btn">
+                <i class="fas fa-plus"></i>
+              </button>
+            </form>
+          </div>
+          <div class="notes-header">
+            <p class="slide-heading">Notes</p>
+            <i class="fas fa-plus-square fa-2x"></i>
+          </div>
+          <div class="notes-container">
+            <div class="note">
+              <i class="fas fa-times"></i>
+              <div class="note-title" contenteditable="true">Example Title</div>
+              <div class="note-detail" contenteditable="true">
+                Example detail
+              </div>
+            </div>
+            <div class="note">
+              <i class="fas fa-times"></i>
+              <div class="note-title" contenteditable="true">Example Title</div>
+              <div class="note-detail" contenteditable="true">
+                Example detail
+              </div>
+            </div>
+            <div class="note">
+              <i class="fas fa-times"></i>
+              <div class="note-title" contenteditable="true">Example Title</div>
+              <div class="note-detail" contenteditable="true">
+                Example detail
+              </div>
+            </div>
+            <div class="note">
+              <i class="fas fa-times"></i>
+              <div class="note-title" contenteditable="true">Example Title</div>
+              <div class="note-detail" contenteditable="true">
+                Example detail
+              </div>
+            </div>
+            <div class="note">
+              <i class="fas fa-times"></i>
+              <div class="note-title" contenteditable="true">Example Title</div>
+              <div class="note-detail" contenteditable="true">
+                Example detail
+              </div>
+            </div>
+            <div class="note">
+              <i class="fas fa-times"></i>
+              <div class="note-title" contenteditable="true">Example Title</div>
+              <div class="note-detail" contenteditable="true">
+                Example detail
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
