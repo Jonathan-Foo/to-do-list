@@ -6,8 +6,8 @@
 }
 
 :root {
-  --main-color: #22c55e;
-  --light-main-color: #49f387;
+  --main-color: #0ea5e9;
+  --light-main-color: #7dd3fc;
   --secondary-color: #e2e8f0;
   --card-color: #facc15;
   --subtext-color: #777;
@@ -47,8 +47,8 @@ body {
 
 .navbar {
   position: relative;
-  background: var(--main-color);
-  color: white;
+  background: var(--light-main-color);
+  color: #222;
   padding: 1.5em 2em;
 
   font-size: 1.2em;
@@ -115,6 +115,9 @@ body {
 }
 
 .slide {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   padding: 1.5em;
   /* border: 1px solid red; */
   min-height: 100vh;
@@ -133,6 +136,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
   overflow: hidden;
+  margin-bottom: 1em;
 }
 
 .to-do-item:hover {
@@ -173,7 +177,7 @@ body {
 }
 
 .priority.low {
-  background: rgb(46, 235, 39);
+  background: rgb(66, 224, 61);
 }
 
 /* CUSTOM CHECKBOX STYLE */
@@ -216,6 +220,21 @@ body {
   font-weight: bold;
   color: #222;
   margin-bottom: 0.5em;
+}
+
+/* NEW TASK BUTTON STYLE */
+.new-task-btn {
+  appearance: none;
+  border: none;
+  background: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.new-task-btn:hover,
+.new-task-btn:hover > * {
+  color: #999;
+  transform: scale(1.05);
 }
 
 /* FOOTER STYLES */
