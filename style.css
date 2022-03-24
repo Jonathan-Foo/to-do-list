@@ -90,11 +90,20 @@ body {
 .project-item:hover,
 .tab:hover,
 .notes:hover {
-  background: #ffdc4f;
+  background: #afe6ff;
   border-radius: 6px;
   cursor: pointer;
 }
 
+.add-projects-btn.active,
+.project-item.active,
+.tab.active,
+.notes.active {
+  background: #afe6ff;
+  border-radius: 6px;
+}
+
+.new-project-modal,
 .add-projects-btn,
 .notes,
 .project-item,
@@ -102,11 +111,40 @@ body {
   display: flex;
   gap: 0.5em;
   padding: 0.5em 1em;
+  align-items: center;
+}
+
+.project-item > .fa-times {
+  opacity: 0;
+  position: absolute;
+  right: 4em;
+  justify-content: flex-end;
+}
+
+.project-item.active > .fa-times,
+.project-item:hover > .fa-times {
+  opacity: 1;
+}
+
+.project-item > .fa-times:hover {
+  color: white;
 }
 
 .notes {
   display: flex;
   align-items: center;
+}
+
+.new-project-name {
+  appearance: none;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.new-project-name:focus {
+  outline: 1px solid var(--main-color);
 }
 
 /* CONTENT STYLES */
@@ -225,6 +263,7 @@ body {
 
 /* NEW TASK BUTTON STYLE */
 .new-task-btn {
+  align-self: center;
   appearance: none;
   border: none;
   background: none;
@@ -234,7 +273,7 @@ body {
 
 .new-task-btn:hover,
 .new-task-btn:hover > * {
-  color: #999;
+  color: var(--card-color);
   transform: scale(1.05);
 }
 
@@ -396,6 +435,117 @@ body {
 .mid-radio-btn:checked::before,
 .low-radio-btn:checked::before {
   color: white;
+}
+
+/* DISPLAY INFO STYLE */
+
+.display-info-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  margin: -1.5em;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.display-info-container.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.display-info-modal {
+  position: relative;
+  display: flex;
+  font-size: 1.5em;
+  width: 30%;
+  flex-direction: column;
+  background: var(--light-main-color);
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  padding: 1em;
+  z-index: 2;
+  color: #222;
+  gap: 0.5em;
+  margin-top: -250px;
+  box-shadow: 2px 2px 10px #777;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+}
+
+.display-info-modal.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1);
+}
+
+.display-info-modal > .fa-times {
+  position: absolute;
+  right: 1em;
+}
+
+.display-info-modal > .fa-times:hover {
+  color: white;
+}
+
+.display-title {
+  color: white;
+  font-size: 1.5em;
+}
+
+.display-line {
+  display: inline-block;
+  background: white;
+  height: 5px;
+  width: 100%;
+}
+
+/* EDIT INFO POPUP VERSION */
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+
+  /* margin: -1.5em; */
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.new-task-modal.popup > form {
+  min-width: 50%;
+  margin-top: -250px;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+}
+
+.new-task-modal.popup > form.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+.due-date-picker {
+  width: 20%;
 }
 
 /* NOTES SLIDE  */

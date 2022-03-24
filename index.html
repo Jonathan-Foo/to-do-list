@@ -20,12 +20,16 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <!-- HEADER -->
     <div class="header">
       <i class="fas fa-clipboard-list fa-3x"></i>
       <p class="title">To-Do List</p>
       <i class="fas fa-clipboard-list fa-3x"></i>
     </div>
+
+    <!-- MAIN -->
     <div class="main">
+      <!-- LEFT SECTION NAVBAR -->
       <div class="navbar">
         <div class="main-section">
           <p class="nav-heading">Main</p>
@@ -45,19 +49,25 @@
         <div class="project">
           <p class="nav-heading">Projects</p>
           <div class="new-projects">
-            <div class="project-item">
+            <div class="project-item active">
               <i class="fas fa-list-alt"></i>
               <p class="nav-subheading">Project Example</p>
+              <i class="fas fa-times fa-xs"></i>
             </div>
             <div class="project-item">
               <i class="fas fa-list-alt"></i>
               <p class="nav-subheading">Project Example</p>
+              <i class="fas fa-times fa-xs"></i>
             </div>
             <div class="project-item">
               <i class="fas fa-list-alt"></i>
               <p class="nav-subheading">Project Example</p>
+              <i class="fas fa-times fa-xs"></i>
             </div>
           </div>
+          <!-- <div class="new-project-modal">
+            <input class="new-project-name" type="text" />
+          </div> -->
           <button class="add-projects-btn">
             <i class="fas fa-plus-square"></i> New Project
           </button>
@@ -74,57 +84,62 @@
         </div>
       </div>
 
+      <!-- MAIN CONTENT SECTION-->
       <div class="content">
-        <!-- <div class="slide">
+        <!-- CHECKLIST SECTION EXAMPLE -->
+        <div class="slide">
           <p class="slide-heading">Home</p>
-          <div class="to-do-item">
-            <span class="priority high"></span>
-            <div class="left-section">
-              <input
-                type="checkbox"
-                name="to-do-checkbox"
-                id="to-do-checkbox"
-              />
-              <p class="to-do-title">Take out the trash</p>
+          <div class="to-do-item-container">
+            <div class="to-do-item">
+              <span class="priority high"></span>
+              <div class="left-section">
+                <input
+                  type="checkbox"
+                  name="to-do-checkbox"
+                  id="to-do-checkbox"
+                />
+                <p class="to-do-title">Take out the trash</p>
+              </div>
+              <div class="right-section">
+                <p class="due-date">21/03/22</p>
+                <i class="far fa-edit" aria-hidden="true"></i>
+                <i class="fas fa-backspace" aria-hidden="true"></i>
+              </div>
             </div>
-            <div class="right-section">
-              <p class="due-date">21/03/22</p>
-              <i class="far fa-edit" aria-hidden="true"></i>
-              <i class="fas fa-backspace" aria-hidden="true"></i>
+            <div class="to-do-item">
+              <span class="priority mid"></span>
+              <div class="left-section">
+                <input
+                  type="checkbox"
+                  name="to-do-checkbox"
+                  id="to-do-checkbox"
+                />
+                <p class="to-do-title">Take out the trash</p>
+              </div>
+              <div class="right-section">
+                <p class="due-date">21/03/22</p>
+                <i class="far fa-edit" aria-hidden="true"></i>
+                <i class="fas fa-backspace" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="to-do-item">
+              <span class="priority low"></span>
+              <div class="left-section">
+                <input
+                  type="checkbox"
+                  name="to-do-checkbox"
+                  id="to-do-checkbox"
+                />
+                <p class="to-do-title">Take out the trash</p>
+              </div>
+              <div class="right-section">
+                <p class="due-date">21/03/22</p>
+                <i class="far fa-edit" aria-hidden="true"></i>
+                <i class="fas fa-backspace" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
-          <div class="to-do-item">
-            <span class="priority mid"></span>
-            <div class="left-section">
-              <input
-                type="checkbox"
-                name="to-do-checkbox"
-                id="to-do-checkbox"
-              />
-              <p class="to-do-title">Take out the trash</p>
-            </div>
-            <div class="right-section">
-              <p class="due-date">21/03/22</p>
-              <i class="far fa-edit" aria-hidden="true"></i>
-              <i class="fas fa-backspace" aria-hidden="true"></i>
-            </div>
-          </div>
-          <div class="to-do-item">
-            <span class="priority low"></span>
-            <div class="left-section">
-              <input
-                type="checkbox"
-                name="to-do-checkbox"
-                id="to-do-checkbox"
-              />
-              <p class="to-do-title">Take out the trash</p>
-            </div>
-            <div class="right-section">
-              <p class="due-date">21/03/22</p>
-              <i class="far fa-edit" aria-hidden="true"></i>
-              <i class="fas fa-backspace" aria-hidden="true"></i>
-            </div>
-          </div>
+
           <div class="new-task-modal">
             <form action="#">
               <input
@@ -182,32 +197,124 @@
               </div>
             </form>
           </div>
+
           <button type="button" class="new-task-btn">
             <i class="fas fa-plus"></i>
             New Task
           </button>
-        </div> -->
-        <div class="slide">
-          <div class="add-note-modal">
-            <form action="#" class="add-note-form">
-              <p class="note-form-title">NEW NOTE</p>
+
+          <!-- DISPLAY INFO MODAL -->
+          <div class="display-info-container active">
+            <div class="display-info-modal active">
               <i class="fas fa-times"></i>
-              <input type="text" class="new-note-title" placeholder="Heading" />
+              <p class="display-title"><strong>Test Title</strong></p>
+              <span class="display-line"></span>
+              <p class="display-project">
+                <strong>Project:</strong> Test project
+              </p>
+              <p class="display-priority"><strong>Priority: </strong>High</p>
+              <p class="display-due-date">
+                <strong>Due Date:</strong> 11/02/29
+              </p>
+              <p class="display-descriptioin">
+                <strong>Description:</strong> Lorem ipsum dolor, sit amet
+                consectetur adipisicing elit. Labore minima praesentium, beatae
+                ratione earum ad qui obcaecati facilis ipsam veniam distinctio
+                explicabo, laborum repellat ipsa dignissimos maxime officia quis
+                blanditiis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="new-task-modal popup active">
+          <form action="#" class="active">
+            <input
+              type="date"
+              name="due-date-picker"
+              id="due-date-picker"
+              class="due-date-picker"
+              required
+            />
+            <i class="fas fa-times-circle fa-lg"></i>
+            <input
+              type="text"
+              name="task-title"
+              id="task-title"
+              class="task-title"
+              placeholder="Title"
+              maxlength="80"
+              required
+            />
+            <textarea
+              type="text"
+              name="task-detail"
+              id="task-detail"
+              class="task-detail"
+              placeholder="Description"
+            ></textarea>
+            <div class="options">
+              <div class="priority-pick">
+                <input
+                  type="radio"
+                  name="priority-level"
+                  id="low"
+                  value="low"
+                  class="low-radio-btn"
+                  required
+                />
+                <input
+                  type="radio"
+                  name="priority-level"
+                  id="mid"
+                  value="mid"
+                  class="mid-radio-btn"
+                  required
+                />
+                <input
+                  type="radio"
+                  name="priority-level"
+                  id="high"
+                  value="high"
+                  class="high-radio-btn"
+                  required
+                />
+              </div>
+              <button type="button" class="add">CONFIRM</button>
+            </div>
+          </form>
+        </div> -->
+
+        <!-- NOTES SECTION EXAMPLE -->
+        <!-- <div class="slide notes-slide">
+          <div class="add-note-modal active" data-close-modal>
+            <form action="#" class="add-note-form active">
+              <p class="note-form-title">NEW NOTE</p>
+              <i class="fas fa-times" id="new-note-icon"></i>
+              <input
+                type="text"
+                class="new-note-title"
+                placeholder="Heading"
+                required
+              />
               <textarea
                 name=""
                 id=""
                 class="new-note-detail"
                 placeholder="Details"
+                required
               ></textarea>
               <button class="new-note-btn">
                 <i class="fas fa-plus"></i>
               </button>
             </form>
           </div>
+
           <div class="notes-header">
             <p class="slide-heading">Notes</p>
-            <i class="fas fa-plus-square fa-2x"></i>
+            <i class="fas fa-plus-square fa-2x" data-close-modal></i>
           </div>
+
           <div class="notes-container">
             <div class="note">
               <i class="fas fa-times"></i>
@@ -252,7 +359,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </body>
