@@ -28,3 +28,20 @@ tabsParent.forEach(tab => tab.addEventListener('click', (e) => {
 
 
 // console.log(projects.length > 0)
+
+
+// const newProjectModal = document.querySelector('.new-project-modal')
+// const newProjectModalInput = newProjectModal.querySelector('input')
+// console.log(newProjectModal)
+// console.log(newProjectModalInput.validity.valid)
+// 
+    const toDosData = JSON.parse(localStorage.todos)
+ 	
+    delete toDosData.home
+    delete toDosData.today
+    delete toDosData.week
+    
+    console.log(Object.keys(toDosData))
+ 
+// localStorage.setItem('todos', JSON.stringify(toDosData))
+
