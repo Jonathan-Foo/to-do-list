@@ -17,7 +17,7 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <script src="script.js" defer></script>
+    <script src="main.js" defer type="module"></script>
   </head>
   <body>
     <!-- HEADER -->
@@ -116,7 +116,7 @@
         </div>
 
         <!-- EDIT INFO POPUP -->
-        <div class="new-task-modal popup">
+        <div class="new-task-modal popup" id="popup">
           <form action="#" class="">
             <input
               type="date"
@@ -223,6 +223,7 @@
                 <i class="fas fa-backspace" aria-hidden="true"></i>
               </div>
             </div>
+
             <div class="to-do-item">
               <span class="priority mid"></span>
               <div class="left-section">
@@ -239,6 +240,7 @@
                 <i class="fas fa-backspace" aria-hidden="true"></i>
               </div>
             </div>
+
             <div class="to-do-item">
               <span class="priority low"></span>
               <div class="left-section">
@@ -257,12 +259,13 @@
             </div>
           </div>
 
-          <div class="new-task-modal">
-            <form action="#">
+          <div class="new-task-modal active" id="fixed">
+            <form autocomplete="off" data-project-name="Home">
               <input
                 type="date"
                 name="due-date-picker"
                 class="due-date-picker"
+                value="2022-03-31"
                 required
               />
               <i class="fas fa-times-circle fa-lg"></i>
@@ -273,6 +276,7 @@
                 placeholder="Title"
                 maxlength="80"
                 required
+                value="test title"
               />
               <textarea
                 name="task-detail"
@@ -297,6 +301,7 @@
                     value="mid"
                     class="mid-radio-btn"
                     required
+                    checked
                   />
                   <input
                     type="radio"
@@ -307,12 +312,12 @@
                     required
                   />
                 </div>
-                <button type="button" class="add">CONFIRM</button>
+                <button class="add">CONFIRM</button>
               </div>
             </form>
           </div>
 
-          <button type="button" class="new-task-btn">
+          <button type="button" class="new-task-btn active">
             <i class="fas fa-plus"></i>
             New Task
           </button>

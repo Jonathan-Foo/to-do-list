@@ -295,6 +295,13 @@ body {
   background: none;
   font-size: 1.5em;
   cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.new-task-btn.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .new-task-btn:hover,
@@ -304,6 +311,18 @@ body {
 }
 
 /* NEW TASK MODAL STYLE */
+.new-task-modal {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.new-task-modal.active {
+  opacity: 1;
+  pointer-events: all;
+  display: block;
+}
+
 .new-task-modal > form {
   position: relative;
   display: flex;
