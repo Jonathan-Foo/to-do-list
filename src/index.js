@@ -95,15 +95,15 @@ const allInputs = [...newTaskModal.querySelectorAll('input[type=date], input[typ
 // console.log(options.map(option => option.checked))
 // console.log(allInputs.every(input => input.validity.valid))
 
-const priority = newTaskModal.querySelector('input[name="priority-level"]:checked').value;
-const taskName = newTaskModal.querySelector('.task-title').value
-const projectName = newTaskForm.dataset.projectName
+// const priority = newTaskModal.querySelector('input[name="priority-level"]:checked').value;
+// const taskName = newTaskModal.querySelector('.task-title').value
+// const projectName = newTaskForm.dataset.projectName
 // const dueDate = getDateFormatted(newTaskModal.querySelector('.due-date-picker').value)
 const dueDate = newTaskModal.querySelector('.due-date-picker').value
 
-console.log(taskName)
-console.log(priority)
-console.log(projectName)
+// console.log(taskName)
+// console.log(priority)
+// console.log(projectName)
 
 function newTaskInfoFactory(name, detail, priority, project, dueDate) {
     if (project == 'Home' || project == 'Today' || project == 'Week') {
@@ -122,10 +122,39 @@ console.log(newInfo)
 // }
 
 
-console.log(dueDate)
-console.log(isToday(parseISO(dueDate)))
-console.log(isThisWeek(parseISO(dueDate)))
+// console.log(dueDate)
+// console.log(isToday(parseISO(dueDate)))
+// console.log(isThisWeek(parseISO(dueDate)))
 
 console.log(format(parseISO(dueDate), 'dd/MM/yyyy'))
 
 
+
+const toDoItems = [...document.querySelectorAll('.to-do-item')]
+console.log(toDoItems)
+
+toDoItems.forEach(task => task.addEventListener('click', (e) => accessLSData(e)))
+
+
+function accessLSData(e) {
+	const projectName = e.target.parentElement.previousElementSibling.textContent 	
+	console.log(projectName)
+	const index = e.target.dataset.index
+	console.log(index)
+}
+
+function capitalized(string) {
+    return string.slice(0, 1).toUpperCase() + string.slice(1) 
+}
+
+
+
+let string = "this is a test string"
+
+const testString = 'testing some word'
+
+string += ` ${capitalized(testString)}`
+
+console.log(string)
+
+console.log(format(new Date(), 'dd/MM/yy'))
