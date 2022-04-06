@@ -1,0 +1,769 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-color: #0ea5e9;
+  --light-main-color: #7dd3fc;
+  --secondary-color: #e2e8f0;
+  --card-color: #facc15;
+  --subtext-color: #777;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* HEADER STYLES */
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: 1em 4em;
+  background-color: var(--main-color);
+  color: white;
+  border-bottom: 10px solid var(--card-color);
+}
+
+.title {
+  font-weight: bold;
+  font-size: 3em;
+}
+
+/* MAIN SECTION STYLES*/
+
+.main {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* NAVBAR STYLES */
+
+.navbar {
+  position: relative;
+  background: var(--light-main-color);
+  color: #222;
+  padding: 1.5em 2em;
+
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.new-projects,
+.project,
+.main-section {
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.5em; */
+  width: 12em;
+}
+
+.add-projects-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  color: white;
+  font-family: inherit;
+  text-align: left;
+  font-size: inherit;
+  opacity: 0;
+  pointer-events: none;
+  transition: 200ms ease-in-out;
+}
+
+.add-projects-btn > i {
+  margin-right: 0.4em;
+}
+
+.add-projects-btn.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-heading {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.1em;
+}
+
+.add-projects-btn:hover,
+.project-item:hover,
+.tab:hover,
+.notes:hover {
+  background: #afe6ff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.project-item.active,
+.tab.active,
+.notes.active {
+  background: #afe6ff;
+  border-radius: 6px;
+}
+
+.new-project-modal,
+.add-projects-btn,
+.notes,
+.project-item,
+.tab {
+  display: flex;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  align-items: center;
+}
+
+.new-project-modal {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: 200ms ease-in-out;
+}
+
+.new-project-modal.active {
+  display: block;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.project-item > .fa-times {
+  opacity: 0;
+  position: absolute;
+  right: 4em;
+  justify-content: flex-end;
+}
+
+.project-item.active > .fa-times,
+.project-item:hover > .fa-times {
+  opacity: 1;
+}
+
+.project-item > .fa-times:hover {
+  color: white;
+}
+
+.notes {
+  display: flex;
+  align-items: center;
+}
+
+.new-project-name {
+  font-weight: bold;
+  appearance: none;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.new-project-name:focus {
+  outline: 1px solid var(--main-color);
+}
+
+/* CONTENT STYLES */
+.content {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+  min-height: 100vh;
+}
+
+.slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* padding: 1.5em;
+  min-height: 100vh; */
+}
+
+.to-do-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  color: #222;
+  align-items: center;
+  background-color: var(--card-color);
+  transition: 100ms ease-in-out;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+
+.to-do-item:hover {
+  transform: scale(1.01);
+}
+
+.fa-edit {
+  color: var(--main-color);
+}
+
+.fa-edit:hover {
+  color: var(--light-main-color);
+}
+
+.fa-times-circle,
+.fa-backspace {
+  color: rgb(255, 17, 17);
+}
+
+.fa-times-circle:hover,
+.fa-backspace:hover {
+  color: rgb(192, 0, 0);
+}
+
+.priority {
+  position: absolute;
+  background: #ccc;
+  width: 30px;
+  height: 100%;
+  left: 0;
+  z-index: 0;
+}
+
+.priority.high {
+  background: rgb(255, 55, 55);
+}
+
+.priority.mid {
+  background: rgb(255, 111, 15);
+}
+
+.priority.low {
+  background: rgb(66, 224, 61);
+}
+
+/* CUSTOM CHECKBOX STYLE */
+.to-do-checkbox {
+  -webkit-appearance: none;
+  position: relative;
+  appearance: none;
+  cursor: pointer;
+  border-radius: 3px;
+  background: white;
+  width: 2em;
+  height: 2em;
+}
+
+.to-do-checkbox::before {
+  content: "✖";
+  color: #777;
+  position: absolute;
+  transform: scale(2);
+  margin: 6px 0 0 7.5px;
+  visibility: hidden;
+}
+
+.to-do-checkbox:checked::before {
+  visibility: visible;
+}
+
+.right-section,
+.left-section {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.slide-heading {
+  font-size: 2em;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.5em;
+}
+
+/* NEW TASK BUTTON STYLE */
+.new-task-btn {
+  align-self: center;
+  appearance: none;
+  border: none;
+  background: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.new-task-btn.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.new-task-btn:hover,
+.new-task-btn:hover > * {
+  color: var(--card-color);
+  transform: scale(1.05);
+}
+
+/* NEW TASK MODAL STYLE */
+.new-task-modal {
+  opacity: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.new-task-modal.active {
+  opacity: 1;
+  pointer-events: all;
+  display: block;
+}
+
+.new-task-modal > form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid var(--card-color);
+  background: #fff0b6;
+  border-radius: 10px;
+  gap: 1em;
+  padding: 1em;
+  color: #222;
+}
+
+.task-title,
+.task-detail {
+  -webkit-apperance: none;
+  appearance: none;
+  font-size: 1.3em;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: #222;
+}
+
+.due-date-picker,
+.task-title:focus,
+.task-detail:focus {
+  outline: none;
+}
+
+.fa-times-circle {
+  position: absolute;
+  right: 0.6em;
+}
+
+.due-date-picker {
+  font-family: inherit;
+  text-transform: uppercase;
+  border: none;
+  background: none;
+  width: 10%;
+  font-weight: bold;
+  color: inherit;
+}
+.add:hover,
+.due-date-picker:hover {
+  color: #777;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add {
+  appearance: none;
+  border: none;
+  color: #222;
+  background: var(--light-main-color);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: 2px solid var(--main-color);
+  font: inherit;
+  font-weight: bold;
+  right: 1em;
+  bottom: 1em;
+}
+
+.add:hover {
+  background: var(--main-color);
+  color: white;
+}
+
+.task-detail {
+  height: 100px;
+  resize: none;
+}
+
+.priority-pick {
+  font-weight: bold;
+  display: flex;
+  gap: 0.5em;
+}
+
+/* LOW BUTTON */
+.low-radio-btn {
+  width: 3.5em;
+  height: 2em;
+  border: 2px solid green;
+}
+
+.low-radio-btn:before {
+  content: "LOW";
+  color: green;
+  top: 4px;
+  left: 5px;
+}
+
+.low-radio-btn:checked {
+  background: green;
+}
+
+/* MID BUTTON */
+.mid-radio-btn {
+  width: 5.5em;
+  height: 2em;
+  border: 2px solid rgb(255, 102, 0);
+}
+
+.mid-radio-btn:before {
+  content: "MEDIUM";
+  color: rgb(255, 102, 0);
+  top: 4px;
+  left: 7px;
+}
+
+.mid-radio-btn:checked {
+  background: rgb(255, 102, 0);
+}
+
+/* HIGH BUTTON */
+.high-radio-btn {
+  width: 3.5em;
+  height: 2em;
+  border: 2px solid rgb(255, 28, 28);
+}
+
+.high-radio-btn:before {
+  content: "HIGH";
+  color: rgb(255, 28, 28);
+  top: 4px;
+  left: 5px;
+}
+
+.high-radio-btn:checked {
+  background: rgb(255, 28, 28);
+}
+
+.high-radio-btn,
+.mid-radio-btn,
+.low-radio-btn {
+  position: relative;
+  appearance: none;
+  border-radius: 5px;
+}
+
+.high-radio-btn:before,
+.mid-radio-btn:before,
+.low-radio-btn:before {
+  font-weight: bold;
+  position: absolute;
+}
+
+.high-radio-btn:checked::before,
+.mid-radio-btn:checked::before,
+.low-radio-btn:checked::before {
+  color: white;
+}
+
+/* DISPLAY INFO STYLE */
+
+.display-info-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  margin: -1.5em;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.display-info-container.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.display-info-modal {
+  position: relative;
+  display: flex;
+  font-size: 1.5em;
+  /* max-height: 500px; */
+  width: 30%;
+  flex-direction: column;
+  background: var(--light-main-color);
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  padding: 1em;
+  z-index: 2;
+  color: #222;
+  gap: 0.5em;
+  margin-top: -250px;
+  box-shadow: 2px 2px 10px #777;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+}
+
+.display-info-modal.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1);
+}
+
+.display-info-modal > .fa-times {
+  position: absolute;
+  right: 1em;
+}
+
+.display-info-modal > .fa-times:hover {
+  color: white;
+}
+
+.display-title {
+  font-weight: bold;
+  color: white;
+  font-size: 1.5em;
+}
+
+.display-line {
+  display: inline-block;
+  background: white;
+  height: 5px;
+  width: 100%;
+}
+
+/* EDIT INFO POPUP VERSION */
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+
+  margin: -1.5em;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.new-task-modal.popup > form {
+  min-width: 50%;
+  margin-top: -250px;
+  transition: 200ms ease-in-out;
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+}
+
+.new-task-modal.popup > form.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+.due-date-picker {
+  width: 20%;
+}
+
+/* NOTES SLIDE  */
+
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  color: inherit;
+  gap: 1em;
+}
+
+.note {
+  position: relative;
+  background: var(--card-color);
+  color: #222;
+  padding: 1em;
+  transition: 100ms ease-in-out;
+  transform: scale(1);
+}
+
+.note:hover {
+  box-shadow: 5px 5px 5px #ccc;
+  transform: scale(1.01);
+}
+
+.notes-header {
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+.notes-header > .fa-plus-square:hover {
+  color: var(--main-color);
+}
+
+.note-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.note > .fa-times {
+  position: absolute;
+  right: 1em;
+}
+
+.note > .fa-times:hover {
+  color: white;
+}
+
+.note-title:focus,
+.note-detail:focus {
+  outline: none;
+}
+
+/* ADD NOTE MODAL  */
+.add-note-modal {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -1.5em;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: 200ms ease-in-out;
+}
+
+.add-note-modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.add-note-form {
+  position: relative;
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  background: var(--light-main-color);
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  padding: 1em;
+  z-index: 2;
+  color: #222;
+  gap: 1em;
+  margin-top: -250px;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+}
+
+.add-note-form.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1);
+}
+
+.new-note-title,
+.new-note-detail {
+  padding: 0.5em;
+  font-size: 1.3em;
+  appearance: none;
+  border: none;
+  border-radius: 5px;
+  background: #afe6ff;
+  font-family: inherit;
+}
+
+.new-note-title:hover,
+.new-note-detail:hover {
+  outline: 1px solid var(--main-color);
+}
+
+.new-note-title:focus,
+.new-note-detail:focus {
+  outline: 1px solid var(--main-color);
+}
+
+.new-note-detail {
+  height: 9em;
+  resize: none;
+}
+
+.note-form-title {
+  color: white;
+  align-self: center;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.add-note-form > .fa-times {
+  position: absolute;
+  right: 1em;
+}
+
+.add-note-form > .fa-times:hover {
+  color: rgb(255, 28, 28);
+}
+
+.new-note-btn {
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  /* align-self: center; */
+  color: white;
+  font-size: 1.5em;
+  appearance: none;
+  border: 1px solid var(--card-color);
+  background: var(--card-color);
+  font-weight: bold;
+}
+
+.new-note-btn:hover {
+  background: white;
+  color: var(--card-color);
+}
+
+/* FOOTER STYLES */
+.footer {
+  position: absolute;
+  font-size: 0.8em;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 0.5em;
+  color: white;
+  bottom: 15px;
+}
+
+.footer > a {
+  color: white;
+}
