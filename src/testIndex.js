@@ -22,40 +22,31 @@ import navbarManager from "./navbarManager";
 
         emptyToDosData.Week.push(todosManager.newTaskInfoFactory("Walk the dog", "take Fred out for a walk", "low", "Today", "2022-04-04"));
         emptyToDosData.Week.push(todosManager.newTaskInfoFactory("Dentist appointment", "routine dental check-up", "low", "", "2022-04-06"));
-        emptyToDosData.Week.push(todosManager.newTaskInfoFactory("Complete and submit to-do list app", "submit to do list web app", "high", "Work", "2022-04-08"));
+        emptyToDosData.Week.push(todosManager.newTaskInfoFactory("Complete and submit to-do list", "submit to do list web app", "high", "Work", "2022-04-08"));
 
-        emptyToDosData.Gym.push(todosManager.newTaskInfoFactory("Chest workout", "do chest routine", "mid", "Gym", "2022-05-06"));
+        emptyToDosData.Gym.push(todosManager.newTaskInfoFactory("Work chest", "do chest routine", "mid", "Gym", "2022-05-06"));
 
         emptyToDosData.Work.push(todosManager.newTaskInfoFactory("Complete and submit to-do list app", "submit to do list web app", "high", "Work", "2022-04-08"));
+    };
 
-        localStorage.setItem('todos', JSON.stringify(emptyToDosData));
-    } else {
-        return
-    }
-
-    
+    localStorage.setItem('todos', JSON.stringify(emptyToDosData))
 })();
 
 
 (function initializeNotesData() {
 	const emptyNotesData = []
-	if (!localStorage.getItem('notes')) {
+	if (!localStorage.getItem(notes)) {
         emptyNotesData.push(notesManager.createNoteObject('Note Example', 'This is the Notes Section where you can create notes'))
         emptyNotesData.push(notesManager.createNoteObject('Note Example', 'This is the Notes Section where you can create notes'))
         emptyNotesData.push(notesManager.createNoteObject('Note Example', 'This is the Notes Section where you can create notes'))
         emptyNotesData.push(notesManager.createNoteObject('Note Example', 'This is the Notes Section where you can create notes'))
-        
-        localStorage.setItem('notes', JSON.stringify(emptyNotesData))
-    } else {
-        return 
     }
-    
+    localStorage.setItem('notes', JSON.stringify(emptyNotesData))
 })();
 
 todosManager.fillToDoItemContainer('Home')
 navbarManager.fillNewProjectSection()
-navbarManager.activateNewProjectModal()
-todosManager.openAndCloseNewTaskModal()
-todosManager.activateSlide()
-notesManager.activateNoteSection()
-todosManager.confirmBtnTrigger()
+
+
+
+

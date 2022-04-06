@@ -33,7 +33,7 @@
       <div class="navbar">
         <div class="main-section">
           <p class="nav-heading">Main</p>
-          <div class="tab home">
+          <div class="tab home active">
             <i class="fas fa-envelope-open-text"></i>
             <p class="tab-name">Home</p>
           </div>
@@ -48,25 +48,9 @@
         </div>
         <div class="project">
           <p class="nav-heading">Projects</p>
-          <div class="new-projects">
-            <div class="project-item active">
-              <i class="fas fa-list-alt"></i>
-              <p class="tab-name nav-subheading">Project Example</p>
-              <i class="fas fa-times fa-xs"></i>
-            </div>
-            <div class="project-item">
-              <i class="fas fa-list-alt"></i>
-              <p class="tab-name nav-subheading">Project Example</p>
-              <i class="fas fa-times fa-xs"></i>
-            </div>
-            <div class="project-item">
-              <i class="fas fa-list-alt"></i>
-              <p class="tab-name nav-subheading">Project Example</p>
-              <i class="fas fa-times fa-xs"></i>
-            </div>
-          </div>
+          <div class="new-projects"></div>
 
-          <div class="new-project-modal active">
+          <div class="new-project-modal">
             <input
               class="new-project-name"
               type="text"
@@ -101,20 +85,16 @@
             <p class="display-title">Details</p>
             <span class="display-line"></span>
             <p class="point display-project">
-              <strong>Project:</strong> Test project
+              <strong>Project:</strong>
             </p>
             <p class="point display-priority">
-              <strong>Priority: </strong>High
+              <strong>Priority: </strong>
             </p>
             <p class="point display-due-date">
-              <strong>Due Date:</strong> 11/02/29
+              <strong>Due Date:</strong>
             </p>
             <p class="point display-detail">
-              <strong>Description:</strong> Lorem ipsum dolor, sit amet
-              consectetur adipisicing elit. Labore minima praesentium, beatae
-              ratione earum ad qui obcaecati facilis ipsam veniam distinctio
-              explicabo, laborum repellat ipsa dignissimos maxime officia quis
-              blanditiis.
+              <strong>Description:</strong>
             </p>
           </div>
         </div>
@@ -179,12 +159,12 @@
         </div>
 
         <!-- ADD NOTE MODAL -->
-        <div class="add-note-modal" data-close-note-modal>
+        <div class="add-note-modal">
           <form action="#" class="add-note-form">
             <p class="note-form-title">NEW NOTE</p>
             <i
               class="fas fa-times"
-              id="new-note-icon"
+              id="close-note-icon"
               data-close-note-modal
             ></i>
             <input
@@ -194,13 +174,11 @@
               required
             />
             <textarea
-              name=""
-              id=""
               class="new-note-detail"
               placeholder="Details"
               required
             ></textarea>
-            <button class="new-note-btn">
+            <button class="new-note-btn" type="button">
               <i class="fas fa-plus"></i>
             </button>
           </form>
@@ -210,77 +188,18 @@
           <!-- TO DO SECTION EXAMPLE -->
           <p class="slide-heading">Home</p>
 
-          <div class="to-do-item-container">
-            <div class="to-do-item" data-index="0">
-              <span class="priority high"></span>
-              <div class="left-section">
-                <input
-                  type="checkbox"
-                  name="to-do-checkbox"
-                  class="to-do-checkbox"
-                />
-                <p class="to-do-title">Take out the trash</p>
-              </div>
-              <div class="right-section">
-                <p class="due-date">21/03/22</p>
-                <i class="far fa-edit" aria-hidden="true"></i>
-                <i class="fas fa-backspace" aria-hidden="true"></i>
-              </div>
-            </div>
+          <div class="to-do-item-container"></div>
 
-            <div class="to-do-item" data-index="1">
-              <span class="priority mid"></span>
-              <div class="left-section">
-                <input
-                  type="checkbox"
-                  name="to-do-checkbox"
-                  class="to-do-checkbox"
-                />
-                <p class="to-do-title">Take out the trash</p>
-              </div>
-              <div class="right-section">
-                <p class="due-date">21/03/22</p>
-                <i class="far fa-edit" aria-hidden="true"></i>
-                <i class="fas fa-backspace" aria-hidden="true"></i>
-              </div>
-            </div>
-
-            <div class="to-do-item" data-index="2">
-              <span class="priority low"></span>
-              <div class="left-section">
-                <input
-                  type="checkbox"
-                  name="to-do-checkbox"
-                  class="to-do-checkbox"
-                />
-                <p class="to-do-title">Take out the trash</p>
-              </div>
-              <div class="right-section">
-                <p class="due-date">21/03/22</p>
-                <i class="far fa-edit" aria-hidden="true"></i>
-                <i class="fas fa-backspace" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="new-task-modal active" id="fixed">
-            <form autocomplete="off" data-project-name="Home">
-              <input
-                type="date"
-                name="due-date-picker"
-                class="due-date-picker"
-                value="2022-03-31"
-                required
-              />
+          <div class="new-task-modal" id="fixed">
+            <form action="/" autocomplete="off" data-project-name="Home">
+              <input type="date" class="due-date-picker" required />
               <i class="fas fa-times-circle fa-lg"></i>
               <input
                 type="text"
-                name="task-title"
                 class="task-title"
                 placeholder="Title"
                 maxlength="80"
                 required
-                value="test title"
               />
               <textarea
                 name="task-detail"
@@ -305,7 +224,6 @@
                     value="mid"
                     class="mid-radio-btn"
                     required
-                    checked
                   />
                   <input
                     type="radio"
@@ -316,7 +234,7 @@
                     required
                   />
                 </div>
-                <button class="add">CONFIRM</button>
+                <button type="button" class="add">CONFIRM</button>
               </div>
             </form>
           </div>
@@ -325,57 +243,6 @@
             <i class="fas fa-plus"></i>
             New Task
           </button>
-
-          <!-- NOTES SECTION EXAMPLE -->
-          <!-- <div class="notes-header">
-            <p class="slide-heading">Notes</p>
-            <i class="fas fa-plus-square fa-2x" data-open-note-modal></i>
-          </div>
-
-          <div class="notes-container">
-            <div class="note">
-              <i class="fas fa-times"></i>
-              <div class="note-title" contenteditable="true">Example Title</div>
-              <div class="note-detail" contenteditable="true">
-                Example detail
-              </div>
-            </div>
-            <div class="note">
-              <i class="fas fa-times"></i>
-              <div class="note-title" contenteditable="true">Example Title</div>
-              <div class="note-detail" contenteditable="true">
-                Example detail
-              </div>
-            </div>
-            <div class="note">
-              <i class="fas fa-times"></i>
-              <div class="note-title" contenteditable="true">Example Title</div>
-              <div class="note-detail" contenteditable="true">
-                Example detail
-              </div>
-            </div>
-            <div class="note">
-              <i class="fas fa-times"></i>
-              <div class="note-title" contenteditable="true">Example Title</div>
-              <div class="note-detail" contenteditable="true">
-                Example detail
-              </div>
-            </div>
-            <div class="note">
-              <i class="fas fa-times"></i>
-              <div class="note-title" contenteditable="true">Example Title</div>
-              <div class="note-detail" contenteditable="true">
-                Example detail
-              </div>
-            </div>
-            <div class="note">
-              <i class="fas fa-times"></i>
-              <div class="note-title" contenteditable="true">Example Title</div>
-              <div class="note-detail" contenteditable="true">
-                Example detail
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
